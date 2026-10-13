@@ -9,5 +9,5 @@ fn main() {
         .map(|s| s.parse().unwrap())
         .collect();
     
-    println!("{}", nums[0] + nums1]);
+    println!("{}", nums[0] + nums[1]);
 }

@@ -1,4 +1,3 @@
-
 use std::io::{self, Read};
 
 fn main() {
@@ -13,4 +12,3 @@ fn main() {
 
     println!("{:?}", nums);
 }
-

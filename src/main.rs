@@ -1,13 +1,16 @@
-use std::io;
+
+use std::io::{self, Read};
 
 fn main() {
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
+    let mut s = String::new();
+    io::stdin().read_to_string(&mut s).unwrap();
 
-    let nums: Vec<i64> = input
-        .split_whitespace()
-        .map(|s| s.parse().unwrap())
+    let nums: Vec<u64> = s
+        .split(|c: char| !c.is_ascii_digit())
+        .filter(|p| !p.is_empty())
+        .map(|p| p.parse().unwrap())
         .collect();
 
-    println!("{}", nums[0] + nums[1]);
+    println!("{:?}", nums);
 }
+
